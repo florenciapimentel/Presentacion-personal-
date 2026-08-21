@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contacto | Florencia Pimentel</title>
+
+  <style>
+
+    body {
+      margin: 0;
+      font-family: Helvetica, Arial, sans-serif;
+      background: #1747ff;
+      color: white;
+    }
+
+    main {
+      min-height: 100vh;
+      padding: 25px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .number {
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: 18vw;
+      line-height: 0.8;
+      letter-spacing: -8px;
+      margin: 0;
+      font-weight: 900;
+    }
+
+    .info {
+      margin-top: 60px;
+      font-size: 28px;
+      font-weight: bold;
+      line-height: 1.2;
+    }
+
+    .info a {
+      color: white;
+      text-decoration: none;
+      border-bottom: 3px solid white;
+    }
+
+    .info a:hover {
+      color: black;
+      border-color: black;
+    }
+
+    .back {
+      display: inline-block;
+      width: fit-content;
+      margin-top: 50px;
+      padding: 15px 24px;
+      background: white;
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+      border: 3px solid black;
+      border-radius: 30px;
+    }
+
+    .back:hover {
+      background: black;
+      color: white;
+    }
+
+    .halftone {
+      position: absolute;
+      right: -100px;
+      bottom: -100px;
+      width: 350px;
+      height: 350px;
+
+      background-image: radial-gradient(
+        white 2px,
+        transparent 2px
+      );
+
+      background-size: 9px 9px;
+      opacity: 0.8;
+    }
+
+    @media (max-width: 700px) {
+
+      h1 {
+        font-size: 23vw;
+        letter-spacing: -5px;
+      }
+
+      .info {
+        font-size: 22px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+<main>
+
+  <nav>
+    <div>FLORENCIA PIMENTEL</div>
+    <div>CONTACTO / 2026</div>
+  </nav>
+
+
+  <div>
+
+    <div class="number">
+      03 / CONTACTO
+    </div>
+
+    <h1>
+      HABLEMOS
+    </h1>
+
+    <div class="info">
+
+      <p>
+        Si quieres contactarme:
+      </p>
+
+      <p>
+        <a href="mailto:florencia.pimentel.f@mail.pucv.cl">
+          florencia.pimentel.f@mail.pucv.cl
+        </a>
+      </p>
+
+      <p>
+        +56 9 5651 2495
+      </p>
+
+    </div>
+
+    <a href="index.html" class="back">
+      VOLVER AL INICIO
+    </a>
+
+  </div>
+
+
+  <div class="halftone"></div>
+
+</main>
+
+</body>
+
+</html>
