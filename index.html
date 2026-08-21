@@ -22,17 +22,17 @@
       background: #1747ff;
       color: white;
       padding: 25px;
+      box-sizing: border-box;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      box-sizing: border-box;
     }
 
     nav {
       display: flex;
       justify-content: space-between;
-      font-weight: bold;
       font-size: 14px;
+      font-weight: bold;
     }
 
     h1 {
@@ -48,8 +48,9 @@
     }
 
     .intro {
+      max-width: 550px;
+      margin-top: 35px;
       font-size: 20px;
-      max-width: 500px;
       font-weight: bold;
       line-height: 1.2;
     }
@@ -77,10 +78,10 @@
     /* SOBRE MÍ */
 
     .about {
-      background: white;
+      min-height: 100vh;
       position: relative;
       overflow: hidden;
-      min-height: 100vh;
+      background: white;
     }
 
     .about-text {
@@ -92,7 +93,7 @@
     }
 
     .tags {
-      margin-top: 30px;
+      margin-top: 35px;
     }
 
     .tag {
@@ -120,61 +121,54 @@
       background-size: 9px 9px;
     }
 
-    /* TALLERES */
+    /* NAVEGACIÓN */
 
-    .work {
+    .pages {
       background: #1747ff;
       color: white;
-      min-height: 120vh;
-      padding-top: 100px;
-      padding-bottom: 120px;
+      min-height: 100vh;
     }
 
-    .work h2 {
-      font-size: 20vw;
-      margin-bottom: 60px;
+    .pages h2 {
+      margin-bottom: 70px;
     }
 
-    .work-list {
-      margin-top: 80px;
-    }
-
-    .work-item {
+    .page-links {
       display: grid;
-      grid-template-columns: 100px 1fr;
-      border-top: 3px solid white;
-      padding: 28px 0;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
     }
 
-    .year {
-      font-weight: bold;
-      font-size: 18px;
-    }
-
-    .work-name {
-      font-size: 35px;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
-
-    /* BOTÓN */
-
-    .boton {
-      display: inline-block;
-      padding: 16px 25px;
+    .page-link {
+      min-height: 250px;
+      padding: 25px;
+      box-sizing: border-box;
       background: white;
       color: black;
       text-decoration: none;
-      font-size: 16px;
-      font-weight: bold;
-      border: 3px solid black;
-      border-radius: 30px;
+      border: 4px solid black;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       transition: 0.2s;
     }
 
-    .boton:hover {
+    .page-link:hover {
       background: black;
       color: white;
+    }
+
+    .page-number {
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    .page-title {
+      font-size: 42px;
+      font-weight: 900;
+      line-height: 0.9;
+      text-transform: uppercase;
+      letter-spacing: -2px;
     }
 
     /* WIKI */
@@ -203,21 +197,6 @@
 
     .link:hover {
       background: #1747ff;
-    }
-
-    /* CONTACTO */
-
-    .contact {
-      background: white;
-      min-height: 70vh;
-    }
-
-    .email {
-      margin-top: 70px;
-      font-size: clamp(24px, 4vw, 60px);
-      line-height: 1.1;
-      font-weight: bold;
-      word-break: break-word;
     }
 
     /* FOOTER */
@@ -250,28 +229,24 @@
         letter-spacing: -4px;
       }
 
-      .work h2 {
-        font-size: 22vw;
-      }
-
       .about-text {
         font-size: 22px;
       }
 
-      .work-name {
-        font-size: 22px;
+      .page-links {
+        grid-template-columns: 1fr;
       }
 
-      .work-item {
-        grid-template-columns: 70px 1fr;
+      .page-link {
+        min-height: 180px;
+      }
+
+      .page-title {
+        font-size: 35px;
       }
 
       .links {
         flex-direction: column;
-      }
-
-      .email {
-        font-size: 8vw;
       }
 
       footer {
@@ -289,7 +264,7 @@
 <body>
 
 
-<!-- INICIO -->
+<!-- PORTADA -->
 
 <header>
 
@@ -308,7 +283,7 @@
     <p class="intro">
       Estudiante de diseño.
       <br>
-      INTERESES: Interacción · UX/UI · Diseño gráfico.
+      Interacción · UX/UI · Diseño gráfico.
     </p>
 
   </div>
@@ -347,12 +322,6 @@
       y generar experiencias.
     </p>
 
-    <p>
-      Fuera de mis estudios me gusta escuchar
-      música, cocinar y viajar para conocer
-      distintas culturas.
-    </p>
-
     <div class="tags">
 
       <span class="tag">Interacción</span>
@@ -369,21 +338,72 @@
 </section>
 
 
-<!-- TALLERES -->
+<!-- PÁGINAS -->
 
-<section class="work">
+<section class="pages">
 
   <div class="number">
-    02 / FORMACIÓN
+    02 / EXPLORAR
   </div>
 
   <h2>
-    TALLERES
+    CONOCE<br>
+    MÁS
   </h2>
 
-  <a href="Talleres.html" target="_blank" class="boton">
-    TALLERES CURSADOS
-  </a>
+
+  <div class="page-links">
+
+
+    <a
+      href="Intereses.html"
+      class="page-link">
+
+      <div class="page-number">
+        01 / INTERESES
+      </div>
+
+      <div class="page-title">
+        LO QUE<br>
+        ME MUEVE
+      </div>
+
+    </a>
+
+
+    <a
+      href="Talleres.html"
+      class="page-link">
+
+      <div class="page-number">
+        02 / FORMACIÓN
+      </div>
+
+      <div class="page-title">
+        TALLERES<br>
+        CURSADOS
+      </div>
+
+    </a>
+
+
+    <a
+      href="Contacto.html"
+      class="page-link">
+
+      <div class="page-number">
+        03 / CONTACTO
+      </div>
+
+      <div class="page-title">
+        HABLEMOS
+      </div>
+
+    </a>
+
+
+  </div>
+
 </section>
 
 
@@ -420,28 +440,7 @@
 </section>
 
 
-<!-- CONTACTO -->
-
-<section class="contact">
-
-  <div class="number">
-    04 / CONTACTO
-  </div>
-
-  <h2>
-    HABLEMOS
-  </h2>
-
-  <div class="email">
-    florencia.pimentel.f@mail.pucv.cl
-    <br>
-    +56 9 5651 2495
-  </div>
-
-</section>
-
-
-<!-- FINAL -->
+<!-- FOOTER -->
 
 <footer>
 
