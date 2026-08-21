@@ -10,6 +10,10 @@
 
   <style>
 
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Helvetica, Arial, sans-serif;
@@ -17,23 +21,87 @@
       color: black;
     }
 
+    /* HEADER */
+
     header {
       min-height: 100vh;
       background: #1747ff;
       color: white;
       padding: 25px;
-      box-sizing: border-box;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      position: relative;
+      overflow: hidden;
     }
+
+    /* MENÚ */
 
     nav {
       display: flex;
       justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 10;
+    }
+
+    .logo {
       font-size: 14px;
       font-weight: bold;
     }
+
+    .menu-button {
+      width: 55px;
+      height: 55px;
+      border: 3px solid white;
+      border-radius: 50%;
+      background: transparent;
+      color: white;
+      font-size: 25px;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .menu-button:hover {
+      background: white;
+      color: #1747ff;
+    }
+
+    .menu {
+      position: absolute;
+      top: 70px;
+      right: 0;
+      background: black;
+      padding: 25px;
+      width: 230px;
+      display: none;
+      flex-direction: column;
+      gap: 18px;
+      z-index: 20;
+      border: 3px solid white;
+    }
+
+    .menu.active {
+      display: flex;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: bold;
+      padding-bottom: 8px;
+      border-bottom: 2px solid white;
+    }
+
+    .menu a:hover {
+      color: #1747ff;
+    }
+
+    /* TITULAR */
 
     h1 {
       font-size: 17vw;
@@ -55,10 +123,11 @@
       line-height: 1.2;
     }
 
+    /* SECCIONES */
+
     section {
       padding: 100px 25px;
       border-bottom: 5px solid black;
-      box-sizing: border-box;
     }
 
     .number {
@@ -106,6 +175,8 @@
       border-radius: 20px;
     }
 
+    /* HALFTONE */
+
     .halftone {
       position: absolute;
       width: 400px;
@@ -121,7 +192,7 @@
       background-size: 9px 9px;
     }
 
-    /* NAVEGACIÓN */
+    /* PÁGINAS */
 
     .pages {
       background: #1747ff;
@@ -142,7 +213,6 @@
     .page-link {
       min-height: 250px;
       padding: 25px;
-      box-sizing: border-box;
       background: white;
       color: black;
       text-decoration: none;
@@ -215,10 +285,6 @@
 
     @media (max-width: 700px) {
 
-      nav {
-        font-size: 12px;
-      }
-
       h1 {
         font-size: 23vw;
         letter-spacing: -5px;
@@ -269,9 +335,39 @@
 <header>
 
   <nav>
-    <div>FLORENCIA PIMENTEL</div>
-    <div>DISEÑO / 2026</div>
+
+    <div class="logo">
+      FLORENCIA PIMENTEL
+    </div>
+
+    <button
+      class="menu-button"
+      onclick="toggleMenu()">
+      ☰
+    </button>
+
+    <div class="menu" id="menu">
+
+      <a href="index.html">
+        INICIO
+      </a>
+
+      <a href="Intereses.html">
+        INTERESES
+      </a>
+
+      <a href="Talleres.html">
+        TALLERES
+      </a>
+
+      <a href="Contacto.html">
+        CONTACTO
+      </a>
+
+    </div>
+
   </nav>
+
 
   <div>
 
@@ -324,10 +420,21 @@
 
     <div class="tags">
 
-      <span class="tag">Interacción</span>
-      <span class="tag">UX/UI</span>
-      <span class="tag">Diseño gráfico</span>
-      <span class="tag">Identidad</span>
+      <span class="tag">
+        Interacción
+      </span>
+
+      <span class="tag">
+        UX/UI
+      </span>
+
+      <span class="tag">
+        Diseño gráfico
+      </span>
+
+      <span class="tag">
+        Identidad
+      </span>
 
     </div>
 
@@ -347,7 +454,8 @@
   </div>
 
   <h2>
-    CONOCE<br>
+    CONOCE
+    <br>
     MÁS
   </h2>
 
@@ -364,7 +472,8 @@
       </div>
 
       <div class="page-title">
-        LO QUE<br>
+        LO QUE
+        <br>
         ME MUEVE
       </div>
 
@@ -380,7 +489,8 @@
       </div>
 
       <div class="page-title">
-        TALLERES<br>
+        TALLERES
+        <br>
         CURSADOS
       </div>
 
@@ -388,7 +498,7 @@
 
 
     <a
-      href="contacto.html"
+      href="Contacto.html"
       class="page-link">
 
       <div class="page-number">
@@ -444,11 +554,28 @@
 
 <footer>
 
-  <div>FLORENCIA PIMENTEL</div>
+  <div>
+    FLORENCIA PIMENTEL
+  </div>
 
-  <div>PUCV / DISEÑO</div>
+  <div>
+    PUCV / DISEÑO
+  </div>
 
 </footer>
+
+
+<script>
+
+  function toggleMenu() {
+
+    const menu = document.getElementById("menu");
+
+    menu.classList.toggle("active");
+
+  }
+
+</script>
 
 
 </body>
